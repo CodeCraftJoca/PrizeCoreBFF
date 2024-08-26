@@ -66,6 +66,7 @@ namespace PrizeCoreBFF.Application.UseCases
                 };
                 var GetPrizeDrawDTO = new GetPrizeDrawDTO
                 {
+                    UserId = externalModels.UserId,
                     Prize = prizeDTOs,
                     Vibe = vibeDTO,
                     TotalVibes = totalVibes,

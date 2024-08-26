@@ -25,32 +25,43 @@ builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddSwaggerGen(options =>
 {
+    // Informações do documento Swagger
     options.SwaggerDoc("v1", new OpenApiInfo
     {
-        Title = "API de Sorteios",
+        Title = "Minha API",
         Version = "v1",
-        Description = "Uma API para gerenciar sorteios e termos e condições.",
+        Description = "Uma API para demonstrar o Swagger e a documentação XML",
         Contact = new OpenApiContact
         {
-            Name = "João Ribeiro",
-            Email = "joao.ribeiro1@outlook.com.br",
-            Url = new Uri("https://github.com/CodeCraftJoca")
+            Name = "Seu Nome",
+            Email = "seu.email@example.com"
         }
     });
 
-    // Inclui o arquivo XML para a API
-    var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-    var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
-    if (File.Exists(xmlPath))
+    // Inclusão dos arquivos XML de comentários
+    var apiXmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    var apiXmlPath = Path.Combine(AppContext.BaseDirectory, apiXmlFile);
+    if (File.Exists(apiXmlPath))
     {
-        options.IncludeXmlComments(xmlPath);
+        options.IncludeXmlComments(apiXmlPath);
     }
     else
     {
-        Console.WriteLine($"Arquivo XML não encontrado: {xmlPath}");
+        Console.WriteLine($"Arquivo XML da API não encontrado: {apiXmlPath}");
     }
-});
 
+    var appXmlFile = "PrizeCoreBFF.Application.xml"; // Nome do arquivo XML da aplicação
+    var appXmlPath = Path.Combine(AppContext.BaseDirectory, appXmlFile);
+    if (File.Exists(appXmlPath))
+    {
+        options.IncludeXmlComments(appXmlPath);
+    }
+    else
+    {
+        Console.WriteLine($"Arquivo XML da Aplicação não encontrado: {appXmlPath}");
+    }
+
+});
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())

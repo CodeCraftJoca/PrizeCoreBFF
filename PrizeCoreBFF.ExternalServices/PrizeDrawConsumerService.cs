@@ -18,7 +18,7 @@ namespace PrizeCoreBFF.ExternalServices
         }
         public async Task<ExternalPrizeDrawDetailsResponseModel> GetPrizeDrawAsync(int prizeId)
         {
-            var endpoint = "https://gist.githubusercontent.com/CodeCraftJoca/bd5854b83c06a13697f96cc0ebedb53a/raw/7370c68d07f6c762ea0ce9a9dea2ee2d8e3830de/Draws.json";
+            var endpoint = "https://gist.githubusercontent.com/CodeCraftJoca/bd5854b83c06a13697f96cc0ebedb53a/raw/e75893329655d012514cc8edc02acead1b7a98c5/Draws.json";
 
             var response = await _httpClient.GetStringAsync(endpoint);
             

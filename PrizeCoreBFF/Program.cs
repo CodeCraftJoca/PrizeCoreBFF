@@ -28,14 +28,20 @@ builder.Services.AddSwaggerGen(options =>
     // Informações do documento Swagger
     options.SwaggerDoc("v1", new OpenApiInfo
     {
-        Title = "Minha API",
+        Title = "PrizeDrawBFF",
         Version = "v1",
-        Description = "Uma API para demonstrar o Swagger e a documentação XML",
+        Description = "Uma API Backend for Frontend (BFF) para gerenciar sorteios e vibrações. Esta API oferece funcionalidades para consultar e gerenciar sorteios, números da sorte e vibes.",
         Contact = new OpenApiContact
         {
-            Name = "Seu Nome",
-            Email = "seu.email@example.com"
-        }
+            Name = "João Carlos Ribeiro",
+            Email = "joao.ribeiro1@outlook.com.br",
+            Url = new Uri("https://www.linkedin.com/in/jo%C3%A3o-carlos-ribeiro-7717bb152/") 
+        },
+        License = new OpenApiLicense
+        {
+            Name = "Free License",
+            Url = new Uri("https://opensource.org/licenses/MIT") 
+        },
     });
 
     // Inclusão dos arquivos XML de comentários

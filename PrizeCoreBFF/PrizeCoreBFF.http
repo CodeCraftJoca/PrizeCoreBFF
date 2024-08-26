@@ -1,0 +1,6 @@
+@PrizeCoreBFF_HostAddress = http://localhost:5091
+
+GET {{PrizeCoreBFF_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
